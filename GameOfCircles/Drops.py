@@ -1,4 +1,4 @@
-class Enemy:
+class Drop:
     
     speed = 8
     diameter = 20
@@ -10,11 +10,11 @@ class Enemy:
         self.team = team
         
     def move(self):
-        self.x += self.speed
-        if self.x < 0 or self.x > width:
+        self.y += self.speed
+        if self.y < 0 or self.y > height:
             self.speed *= -1
-        if self.x < 0:
-            self.x = width
+        if self.y > height:
+            self.y = 0
         
     def display(self):
         fill(self.c)
