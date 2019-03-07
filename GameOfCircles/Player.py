@@ -19,11 +19,6 @@ class Player(Sprite):
         self.y = y
         self.team = team
         
-    # instance methods
-    def display(self):
-        fill(self.c)
-        ellipse(self.x, self.y, self.diameter, self.diameter)
-        
     def move(self):
         if self.left:
             self.x -= self.speed
@@ -35,10 +30,6 @@ class Player(Sprite):
             self.y += self.speed
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
-    
-    def animate(self):
-        self.display()
-        self.move()
         
     def fire(self):
         print("FIRE")

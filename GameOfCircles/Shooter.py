@@ -31,14 +31,6 @@ class Shooter(Sprite):
         if self.x < 0 or self.x > width:
             self.speed *= -1
             
-    def display(self):
-        fill(self.c)
-        ellipse(self.x, self.y, self.diameter, self.diameter)
-            
-    def animate(self):
-        self.move()
-        self.display()
-            
     def aim(self, target):
         
         xDist = self.x - target.x
