@@ -1,4 +1,5 @@
 import platform
+import SpriteManager
 from Bullet import Bullet
 from Enemy import Enemy
 from Player import Player
@@ -6,6 +7,7 @@ from SpriteManager import sprites
 from Drops import Drop
 from Jiggle_Bot import Jiggle
 from ScreenSaverBot import Saver
+from Shooter import Shooter
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
@@ -15,25 +17,13 @@ def setup():
     playerTeam = 1
     enemyTeam = 2
     player = Player(width/2, height/2, playerTeam)
-    
-    sprites.append(player)
-    sprites.append(Drop(50, 50, enemyTeam))
-    sprites.append(Drop(150, 150, enemyTeam))
-    sprites.append(Drop(200, 200, enemyTeam))
-    sprites.append(Drop(170, 500, enemyTeam))
-    sprites.append(Drop(150, 100, enemyTeam))
-    sprites.append(Drop(300, 400, enemyTeam))
-    sprites.append(Drop(350, 100, enemyTeam))
-    sprites.append(Drop(400, 300, enemyTeam))
-    sprites.append(Drop(450, 200, enemyTeam))
-    sprites.append(Drop(100, 0, enemyTeam))
-    sprites.append(Jiggle(width/2, 50, enemyTeam))
-    sprites.append(Saver(width/2, 100, enemyTeam))
+    SpriteManager.spawn(Shooter(200, 50, 2))
+    SpriteManager.setPlayer(player)
                            
 def draw():
     global player, sprites
     background(255)    
-
+    
     for sprite in sprites:
         sprite.animate()
         

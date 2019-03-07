@@ -19,11 +19,3 @@ class Saver:
             self.yspeed *= -1
         if self.x < 0 or self.x > width:
             self.xspeed *= -1
-        
-    def display(self):
-        fill(self.c)
-        ellipse(self.x, self.y, self.diameter, self.diameter)
-        
-    def animate(self):
-        self.move()
-        self.display()
