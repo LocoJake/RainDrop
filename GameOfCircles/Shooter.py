@@ -1,5 +1,5 @@
 mark = 0
-wait = 1000
+wait = 300
 go = True
 from Bullet import Bullet
 from Sprite import Sprite
