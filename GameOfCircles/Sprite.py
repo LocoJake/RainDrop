@@ -12,8 +12,10 @@ class Sprite(object):
         pass
         
     def display(self):
+        health = 3
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)
+        strokeWeight(health)
         
     def animate(self):
         self.move()
@@ -23,3 +25,10 @@ class Sprite(object):
         r1 = self.diameter / 2.0
         r2 = self.diameter / 2.0
         return r1 + r2 > dist(self.x, self.y, other.x, other.y)
+    
+    def handleCollision(self):
+        global health, isColliding
+        if (isColliding is True):
+            health -= 1
+        if(health is 0):
+            SpriteManager.destroy(self)

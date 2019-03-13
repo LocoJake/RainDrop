@@ -11,7 +11,6 @@ class Shooter(Sprite):
     
     speed = 4
     xspeed = 4
-    #yspeed = 2
     diameter = 50
     c = color(0, 0, 255)
     
@@ -22,7 +21,6 @@ class Shooter(Sprite):
         
     def move(self):
         self.x += self.speed
-        #self.y += self.yspeed
         
         vector = self.aim(SpriteManager.getPlayer())
         self.fire(vector)
