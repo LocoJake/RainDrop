@@ -1,3 +1,5 @@
+import SpriteManager
+
 class Sprite(object):
     team = 2
     diameter = 50
@@ -12,10 +14,9 @@ class Sprite(object):
         pass
         
     def display(self):
-        health = 3
+        armor = 3
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)
-        strokeWeight(health)
         
     def animate(self):
         self.move()
@@ -27,8 +28,4 @@ class Sprite(object):
         return r1 + r2 > dist(self.x, self.y, other.x, other.y)
     
     def handleCollision(self):
-        global health, isColliding
-        if (isColliding is True):
-            health -= 1
-        if(health is 0):
-            SpriteManager.destroy(self)
+        SpriteManager.destroy(self)

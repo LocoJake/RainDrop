@@ -1,6 +1,7 @@
 from Bullet import Bullet
 import SpriteManager
 from Sprite import Sprite
+from Armored import Armored
 
 class Player(Sprite):
     
@@ -33,9 +34,6 @@ class Player(Sprite):
         
     def fire(self):
         print("FIRE")
-        
-    def handleCollision(self):
-        pass
         
     def keyDown(self):
         if key == 'f' or key == 'F':

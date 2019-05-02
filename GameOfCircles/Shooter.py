@@ -6,6 +6,7 @@ from Sprite import Sprite
 from Player import Player
 import SpriteManager
 from Enemy import Enemy
+from Armored import Armored
 
 class Shooter(Sprite):
     
@@ -14,7 +15,7 @@ class Shooter(Sprite):
     diameter = 50
     c = color(0, 0, 255)
     
-    def _init_(self, x, y, team):
+    def __init__(self, x, y, team):
         self.x = x
         self.y = y
         self.team = team
